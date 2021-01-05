@@ -10,7 +10,7 @@ app.get("/cards", (req, res) => {
 
 app.get("/card/:cardId", (req, res) => {
   console.log(
-    "/card/:cardId",
+    `/card/${req.params.cardId}`,
     new Date(parseInt(req.query.timestamp)).toString()
   );
   res.sendFile(path.join(__dirname, "card1.json"));

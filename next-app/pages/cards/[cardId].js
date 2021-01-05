@@ -1,11 +1,17 @@
 import axios from "axios";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import styles from "../../styles/Home.module.css";
 
 export default function Card(props) {
   console.log("props", props);
   const { card } = props;
+  const router = useRouter();
 
+  if (router.isFallback) {
+    // router.isFallback branch is required, otherwise will get a build error
+    return <p>loading......</p>;
+  }
   return (
     <div className={styles.container}>
       <Head>
