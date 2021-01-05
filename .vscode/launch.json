@@ -1,0 +1,44 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Port",
+      "address": "localhost",
+      "port": 9229,
+      "sourceMaps": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Next.js",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/next",
+      "env": {
+        "BUILD_ENV": "development",
+        "NODE_OPTIONS": "--inspect"
+      },
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${workspaceFolder}/next-app/*"
+      },
+      "cwd": "${workspaceFolder}/next-app/",
+      "port": 9229,
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Next.js",
+      "skipFiles": ["<node_internals>/**"],
+      "port": 9229,
+      "restart": true,
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///./*": "${workspaceRoot}/next-app/*"
+      }
+    }
+  ]
+}
