@@ -1,0 +1,18 @@
+{
+  "name": "next-js-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:DmytroYeremieiev/next-js-playground.git",
+  "author": "DmytroYeremieiev <dmytro.yeremieiev@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "local-server",
+    "next-app"
+  ],
+  "scripts": {
+    "server": "yarn workspace local-server start",
+    "next": "yarn workspace next-app serve",
+    "dev": "yarn workspace next-app dev"
+  }
+}
